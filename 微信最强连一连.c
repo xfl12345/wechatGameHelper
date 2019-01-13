@@ -2,9 +2,6 @@
 #include<stdlib.h>
 #include<stdbool.h>
 #include<time.h>
-//#include<conio.h>
-//#include<windows.h>
-//#include"cJSON.h"
 #include"cJSON.c"
 struct SquareInfo{
 	int lieMax;
@@ -18,7 +15,7 @@ struct SquareInfo{
 	char **tu2;
 };
 typedef struct SquareInfo  tt;
-/*¶¨ÒåÒ»¸öÀàĞÍ£¬Ãû×Ö½Ğ¡°tt¡±£¬ËüÔ­À´½Ğ×ö¡°struct SquareInfo¡± */
+/*å®šä¹‰ä¸€ä¸ªç±»å‹ï¼Œåå­—å«â€œttâ€ï¼Œå®ƒåŸæ¥å«åšâ€œstruct SquareInfoâ€ */
 struct fangXiang{
 	char shang;
 	char xia;
@@ -85,14 +82,14 @@ int main(void)
 				if(DFS(tu,1,m_choice))
 				{
 					system("cls");
-					printf("Í¨¹Ø³É¹¦£¡\n");
-					printf("ÆğµãµÄµÚÒ»²½Îª£º%c\n",getNextStep(tu,tu->startPlace));
-					printf("Í¨¹ØÂ·¾¶ÈçÏÂ£º\n");
+					printf("é€šå…³æˆåŠŸï¼\n");
+					printf("èµ·ç‚¹çš„ç¬¬ä¸€æ­¥ä¸ºï¼š%c\n",getNextStep(tu,tu->startPlace));
+					printf("é€šå…³è·¯å¾„å¦‚ä¸‹ï¼š\n");
 					printTu(tu,3,false);
 				}
 				else
 				{
-					printf("²»´æÔÚÍ¨¹ØÂ·¾¶£¡\n");
+					printf("ä¸å­˜åœ¨é€šå…³è·¯å¾„ï¼\n");
 				}
 				system("pause");
 				break;
@@ -123,25 +120,25 @@ int menu(int choice,int min,int max)
 	{
 		case 1:
 			system("cls");
-			printf("»¶Ó­»Øµ½Ö÷²Ëµ¥£¡£¡\n");
-			printf("1.ĞŞ¸Ä¾ØÕóĞÅÏ¢\n");
-			printf("2.¿ªÊ¼Çî¾Ù±¬ÆÆ±¾¹ØÍ¨¹ØÂ·¾¶\n");
-			printf("3.Õ¹Ê¾Ò»ÏÂµ±Ç°ÉèÖÃºÃµÄ¾ØÕó\n");
-			printf("4.´æµµ\n");
-			printf("5.¶Áµµ\n");
-			printf("6.É¾µµ\n");
-			printf("0.ÍË³ö±©Á¦Çî¾ÙÏµÍ³\n");
+			printf("æ¬¢è¿å›åˆ°ä¸»èœå•ï¼ï¼\n");
+			printf("1.ä¿®æ”¹çŸ©é˜µä¿¡æ¯\n");
+			printf("2.å¼€å§‹ç©·ä¸¾çˆ†ç ´æœ¬å…³é€šå…³è·¯å¾„\n");
+			printf("3.å±•ç¤ºä¸€ä¸‹å½“å‰è®¾ç½®å¥½çš„çŸ©é˜µ\n");
+			printf("4.å­˜æ¡£\n");
+			printf("5.è¯»æ¡£\n");
+			printf("6.åˆ æ¡£\n");
+			printf("0.é€€å‡ºæš´åŠ›ç©·ä¸¾ç³»ç»Ÿ\n");
 			break;
 		case 2:
 			system("cls");
-			printf("ÇëÑ¡Ôñ±©Á¦Çî¾ÙÄ£Ê½£º\n");
-			printf("£¨ÒÔÏÂËùÓĞÄ£Ê½¶¼×îÖÕÒÔ×Ö·ûÊı¾İ·´À¡½á¹û£©\n");
-			printf("1.ÊµÊ±Êı¾İÒÔ×Ö·ûÊä³ö£¨½ÏÂı£©\n");
-			printf("2.ÊµÊ±Êı¾İÒÔ¾²Ä¬Ä£Ê½¸üĞÂµ½×Ö·ûÊı¾İ£¨½Ï¿ì£©\n");
-			printf("3.ÊµÊ±Êı¾İ¸üĞÂµ½×Ö·ûÊı¾İ²¢Êä³ö×Ö·ûÊı¾İ£¨×îÂı£©\n");
-			printf("4.ÊµÊ±Êı¾İÖ±½ÓÒÔÊı×ÖĞÎÊ½Êä³ö£¨ºÜ¿ì£©\n");
-			printf("5.²»ÏÔÊ¾ÊµÊ±Êı¾İ£¨×î¿ì£©\n");
-			printf("0.·µ»ØÖ÷²Ëµ¥\n");
+			printf("è¯·é€‰æ‹©æš´åŠ›ç©·ä¸¾æ¨¡å¼ï¼š\n");
+			printf("ï¼ˆä»¥ä¸‹æ‰€æœ‰æ¨¡å¼éƒ½æœ€ç»ˆä»¥å­—ç¬¦æ•°æ®åé¦ˆç»“æœï¼‰\n");
+			printf("1.å®æ—¶æ•°æ®ä»¥å­—ç¬¦è¾“å‡ºï¼ˆè¾ƒæ…¢ï¼‰\n");
+			printf("2.å®æ—¶æ•°æ®ä»¥é™é»˜æ¨¡å¼æ›´æ–°åˆ°å­—ç¬¦æ•°æ®ï¼ˆè¾ƒå¿«ï¼‰\n");
+			printf("3.å®æ—¶æ•°æ®æ›´æ–°åˆ°å­—ç¬¦æ•°æ®å¹¶è¾“å‡ºå­—ç¬¦æ•°æ®ï¼ˆæœ€æ…¢ï¼‰\n");
+			printf("4.å®æ—¶æ•°æ®ç›´æ¥ä»¥æ•°å­—å½¢å¼è¾“å‡ºï¼ˆå¾ˆå¿«ï¼‰\n");
+			printf("5.ä¸æ˜¾ç¤ºå®æ—¶æ•°æ®ï¼ˆæœ€å¿«ï¼‰\n");
+			printf("0.è¿”å›ä¸»èœå•\n");
 			break;
 		default:break;
 	}
@@ -213,7 +210,7 @@ bool DFS(tt *ko,int step,int mode)
 		if(ko->nowPlace == ko->endPlace || ko->endPlace == -9 )
 		{
 			if(ko->endPlace==-9)
-				ko->nowPlace = ko->endPlace;
+				ko->endPlace = ko->nowPlace;
 			return true;
 		}
 	return false;
@@ -225,25 +222,25 @@ void tuModify(tt **ko,int is_firstrun)
 	tt *ko1 = NULL;
 	if(is_firstrun==0&& *ko==NULL)
 	{
-		printf("Ê×´ÎÊ¹ÓÃ£¬");
+		printf("é¦–æ¬¡ä½¿ç”¨ï¼Œ");
 		tuInit(ko,true);
 		detailSet(*ko);
-		printf("\n³õÊ¼»¯");
+		printf("\nåˆå§‹åŒ–");
 	}
 	else
 	{
-		printf("ÊÇ·ñĞèÒª³õÊ¼»¯¾ØÕóĞÅÏ¢£¿\n");
+		printf("æ˜¯å¦éœ€è¦åˆå§‹åŒ–çŸ©é˜µä¿¡æ¯ï¼Ÿ\n");
 		if(justMakeSure())
 		{
 			tuInit(ko,true);
 			detailSet(*ko);
 		}
 		detailSet(*ko);
-		/*´ıÌí¼Ó£ºÕë¶Ô¸ö±ğÊı¾İ½øĞĞĞŞ¸Ä*/
+		/*å¾…æ·»åŠ ï¼šé’ˆå¯¹ä¸ªåˆ«æ•°æ®è¿›è¡Œä¿®æ”¹*/
 	}
 	ko1=*ko;
 	ko1->nowPlace=ko1->startPlace;
-	printf("ÉèÖÃÍê±Ï£¡\n");
+	printf("è®¾ç½®å®Œæ¯•ï¼\n");
 	system("pause");
 	return;
 }
@@ -269,7 +266,7 @@ void printTu(tt *ko,int mode,bool cleanScreen)
 	int x,y,i,**kk=ko->tu;
 	char **kk2=ko->tu2;
 	char tmpChar;
-	printf("µ±Ç°Í¼¿öÈçÏÂ£º\n");
+	printf("å½“å‰å›¾å†µå¦‚ä¸‹ï¼š\n");
 	for(y=0;y < ko->hangMax ; y++)
 	{
 		for( x=0;x < ko->lieMax ; x++)
@@ -373,13 +370,13 @@ void printTu(tt *ko,int mode,bool cleanScreen)
 void printTuInfo(tt *ko)
 {
 	system("cls");
-	printf("µ±Ç°ÊÇµÚ%d¹Ø£¬¾ØÕóÓĞ%dĞĞ£¬%dÁĞ£¬\n",ko->Lv,ko->hangMax,ko->lieMax);
-	printf("±¾¹ØÊÇ´ÓµÚ%dĞĞ%dÁĞ¿ªÊ¼µÄ£¬",getXYforRead(ko,ko->startPlace,2),getXYforRead(ko,ko->startPlace,1) );
+	printf("å½“å‰æ˜¯ç¬¬%då…³ï¼ŒçŸ©é˜µæœ‰%dè¡Œï¼Œ%dåˆ—ï¼Œ\n",ko->Lv,ko->hangMax,ko->lieMax);
+	printf("æœ¬å…³æ˜¯ä»ç¬¬%dè¡Œ%dåˆ—å¼€å§‹çš„ï¼Œ",getXYforRead(ko,ko->startPlace,2),getXYforRead(ko,ko->startPlace,1) );
 	if(ko->endPlace==-9)
-		printf("µ«²»ÖªµÀÖÕµãÔÚÄÄ¡£\n");
+		printf("ä½†ä¸çŸ¥é“ç»ˆç‚¹åœ¨å“ªã€‚\n");
 	else
-		printf("²¢×îÖÕ×ßµ½µÚ%dĞĞ%dÁĞµÄ·½¸ñ¡£\n",getXYforRead(ko,ko->endPlace,2) , getXYforRead(ko,ko->endPlace,1) );
-	printf("Ä¿Ç°×ßµ½ÁËµÚ%dĞĞ%dÁĞµÄ·½¸ñ£¬»¹ÓĞ%d¸ö·½¸ñÃ»×ß¡£\n",getXYforRead(ko,ko->nowPlace,2),getXYforRead(ko,ko->nowPlace,1) ,ko->undo);
+		printf("å¹¶æœ€ç»ˆèµ°åˆ°ç¬¬%dè¡Œ%dåˆ—çš„æ–¹æ ¼ã€‚\n",getXYforRead(ko,ko->endPlace,2) , getXYforRead(ko,ko->endPlace,1) );
+	printf("ç›®å‰èµ°åˆ°äº†ç¬¬%dè¡Œ%dåˆ—çš„æ–¹æ ¼ï¼Œè¿˜æœ‰%dä¸ªæ–¹æ ¼æ²¡èµ°ã€‚\n",getXYforRead(ko,ko->nowPlace,2),getXYforRead(ko,ko->nowPlace,1) ,ko->undo);
 	printTu(ko,3,false);
 	system("pause");
 	return;
@@ -413,10 +410,10 @@ void tuInit(tt **ko,bool need_ask)
 	ko1=*ko;
 	if(need_ask)
 	{
-		printf("ÇëÊäÈë£º\n");
-		printf("¾ØÕóÓĞ¼¸ÁĞ£º");
+		printf("è¯·è¾“å…¥ï¼š\n");
+		printf("çŸ©é˜µæœ‰å‡ åˆ—ï¼š");
 		ko1->lieMax=limitInputNum(1,99);
-		printf("¾ØÕóÓĞ¼¸ĞĞ£º");
+		printf("çŸ©é˜µæœ‰å‡ è¡Œï¼š");
 		ko1->hangMax=limitInputNum(1,99);
 	}
 	ko1->Lv=ko1->startPlace=ko1->endPlace=-1;
@@ -440,19 +437,19 @@ void detailSet(tt *ko)
 	int x,y;
 	int ci;
 	char tmpchar;
-	printf("ÇëÎÊÕâÊÇµÚ¼¸¹Ø£º");
+	printf("è¯·é—®è¿™æ˜¯ç¬¬å‡ å…³ï¼š");
 	ko->Lv=limitInputNum(1,9999);
-	printf("ÇëÎÊ´ÓÄÄÀï¿ªÊ¼£¿\n");
+	printf("è¯·é—®ä»å“ªé‡Œå¼€å§‹ï¼Ÿ\n");
 	simpleGetXY(ko,&x,&y);
 	(ko->tu)[y][x]=1;
 	(ko->tu2)[y][x]='S';
 	ko->startPlace=ko->lieMax * y + x +1;
-	printf("ÇëÎÊÄúÖªµÀ×îºóÒ»²½ÊÇµ½ÄÄÀï½áÊøÂğ£¿£¨y/n£©\n");
+	printf("è¯·é—®æ‚¨çŸ¥é“æœ€åä¸€æ­¥æ˜¯åˆ°å“ªé‡Œç»“æŸå—ï¼Ÿï¼ˆy/nï¼‰\n");
 	if(justMakeSure())
 	{
 		while(1)
 		{
-			printf("ÇëÎÊµ½ÄÄÀï½áÊø£¿\n");
+			printf("è¯·é—®åˆ°å“ªé‡Œç»“æŸï¼Ÿ\n");
 			simpleGetXY(ko,&x,&y);
 			if(!is_replace(ko,x,y,true))
 				break;
@@ -465,7 +462,7 @@ void detailSet(tt *ko)
 	{
 		ko->endPlace=-9;
 	}
-	printf("È·¶¨ÉèÖÃÎŞÎóÁËÂğ£¿£¨y/n£©\n");
+	printf("ç¡®å®šè®¾ç½®æ— è¯¯äº†å—ï¼Ÿï¼ˆy/nï¼‰\n");
 	if(!justMakeSure())
 	{
 		detailSet(ko);
@@ -483,12 +480,12 @@ void obstacleSet(tt *ko,bool mode)
 	int tmp2,m,n,i;
 	if(mode)
 	{
-		printf("ÇëÎÊÓĞ¼¸¸ö¿Õ¶´£¿\n");
+		printf("è¯·é—®æœ‰å‡ ä¸ªç©ºæ´ï¼Ÿ\n");
 		n=justGetNum();
 		for(i=1;i<=n;i++)
 		{
-			printf("ÇëÉèÖÃµÚ%d¸ö¿Õ¶´\n",i);
-			printf("ÇëÎÊËüÔÚÄÄÀï£¿\n");
+			printf("è¯·è®¾ç½®ç¬¬%dä¸ªç©ºæ´\n",i);
+			printf("è¯·é—®å®ƒåœ¨å“ªé‡Œï¼Ÿ\n");
 			simpleGetXY(ko,&x,&y);
 			if(is_replace(ko,x,y,true))
 			{
@@ -502,12 +499,12 @@ void obstacleSet(tt *ko,bool mode)
 	}
 	else
 	{
-		printf("ÇëÎÊÒªÈ¡Ïû¼¸¸ö¿Õ¶´£¿\n");
+		printf("è¯·é—®è¦å–æ¶ˆå‡ ä¸ªç©ºæ´ï¼Ÿ\n");
 		n=justGetNum();
 		for(i=1;i<=n;i++)
 		{
-			printf("ÕıÔÚÈ¡ÏûµÚ%d¸ö¿Õ¶´\n",i);
-			printf("ÇëÎÊËüÔÚÄÄÀï£¿\n");
+			printf("æ­£åœ¨å–æ¶ˆç¬¬%dä¸ªç©ºæ´\n",i);
+			printf("è¯·é—®å®ƒåœ¨å“ªé‡Œï¼Ÿ\n");
 			simpleGetXY(ko,&x,&y);
 			if(is_replace(ko,x,y,true))
 			{
@@ -519,7 +516,7 @@ void obstacleSet(tt *ko,bool mode)
 			ko->undo++;
 		}
 	}
-	printf("È·¶¨ÉèÖÃÎŞÎóÁËÂğ£¿£¨y/n£©\n");
+	printf("ç¡®å®šè®¾ç½®æ— è¯¯äº†å—ï¼Ÿï¼ˆy/nï¼‰\n");
 	if(!justMakeSure())
 		obstacleSet(ko,!mode);
 	return;
@@ -533,7 +530,7 @@ int limitInputNum(int min,int max)
 		result=justGetNum();
 		if(result>=min && result<=max)
 			break;
-		printf("\n³¬ÏŞ£¡ÇëÊäÈëºÏÀíµÄÕı³£Öµ£¡\n");
+		printf("\nè¶…é™ï¼è¯·è¾“å…¥åˆç†çš„æ­£å¸¸å€¼ï¼\n");
 	}
 	return result;
 }
@@ -552,16 +549,16 @@ int justGetNum(void)
 		}
 		if(b[i]=='\0' && i!=0)
 			break;
-		printf("\nÇëÊäÈëÒ»¸öÊı×Ö£¡\n");
-		printf("ÇëÊäÈë£º");
+		printf("\nè¯·è¾“å…¥ä¸€ä¸ªæ•°å­—ï¼\n");
+		printf("è¯·è¾“å…¥ï¼š");
 	}
 	return result;
 }
 void simpleGetXY(tt *ko,int *x,int *y)
 {
-	printf("£¨´Ó×óÍùÓÒÊı£©µÚ¼¸ÁĞ£º");
+	printf("ï¼ˆä»å·¦å¾€å³æ•°ï¼‰ç¬¬å‡ åˆ—ï¼š");
 	*x=limitInputNum(1,ko->lieMax) -1;
-	printf("£¨´ÓÉÏÍùÏÂÊı£©µÚ¼¸ĞĞ£º");
+	printf("ï¼ˆä»ä¸Šå¾€ä¸‹æ•°ï¼‰ç¬¬å‡ è¡Œï¼š");
 	*y=limitInputNum(1,ko->hangMax) -1;
 	return;
 }
@@ -622,16 +619,16 @@ void saveData(tt *ko)
 	FILE *fp=NULL;
 	if(ko==NULL)
 	{
-		printf("\n\nÃ²ËÆÄú»¹Ã»´³¹ØÊı¾İÄØ£¡\n\n");
+		printf("\n\nè²Œä¼¼æ‚¨è¿˜æ²¡é—¯å…³æ•°æ®å‘¢ï¼\n\n");
 		return;
 	}
 	else if(ko->tu == NULL)
 	{
-		printf("\n\n¾ØÕóÊı¾İ·Ç·¨£¡´æµµÊ§°Ü£¡\n\n");
+		printf("\n\nçŸ©é˜µæ•°æ®éæ³•ï¼å­˜æ¡£å¤±è´¥ï¼\n\n");
 		return;
 	}
 	fp=fopen(filename,"w");
-	//´´½¨Ò»¸ö¿ÕµÄÎÄµµ£¨¶ÔÏó£©
+	//åˆ›å»ºä¸€ä¸ªç©ºçš„æ–‡æ¡£ï¼ˆå¯¹è±¡ï¼‰
     cJSON *jsonData = cJSON_CreateObject();
 	cJSON_AddItemToObject(jsonData,"lieMax",cJSON_CreateNumber(ko->lieMax));
 	cJSON_AddItemToObject(jsonData,"hangMax",cJSON_CreateNumber(ko->hangMax));
@@ -652,23 +649,23 @@ void saveData(tt *ko)
 		}
 	}
 	cJSON_AddItemToObject(jsonData,"tu",tu);
-	sendProgramInfo("½ÓÏÂÀ´³öÏÖµÄÊÇ´æµµÎÄ¼şµÄÄÚÈİ\n*²»±Ø¾ª»Å£¬ÒàÎŞĞë×öÈÎºÎ¶¯×÷");
+	sendProgramInfo("æ¥ä¸‹æ¥å‡ºç°çš„æ˜¯å­˜æ¡£æ–‡ä»¶çš„å†…å®¹\n*ä¸å¿…æƒŠæ…Œï¼Œäº¦æ— é¡»åšä»»ä½•åŠ¨ä½œ");
 	char *buf = cJSON_Print(jsonData);
 	puts(buf);
 	fwrite(buf,strlen(buf),1,fp);
 	fclose(fp);
 	free(buf);
-	printf("\n´æµµÍê±Ï£¡\n\n");
+	printf("\nå­˜æ¡£å®Œæ¯•ï¼\n\n");
 	system("pause");
 }
 void readData(tt **ko)
 {
-	FILE *fp=fopen(filename,"r");//´ò¿ªÎÄ¼ş
+	FILE *fp=fopen(filename,"r");//æ‰“å¼€æ–‡ä»¶
 	if(fp==NULL)
 	{
-		printf("\n¶ÁµµÊ§°Ü£¡\n");
-        printf("Çë¼ì²éÒ»ÏÂÎÄ¼ş%sÊÇ²»ÊÇ±»Õ¼ÓÃÁË\n",filename);
-        printf("»òÕßÊÇÄã»¹Ã»´æ¹ıµµ£¡\n\n");
+		printf("\nè¯»æ¡£å¤±è´¥ï¼\n");
+        printf("è¯·æ£€æŸ¥ä¸€ä¸‹æ–‡ä»¶%sæ˜¯ä¸æ˜¯è¢«å ç”¨äº†\n",filename);
+        printf("æˆ–è€…æ˜¯ä½ è¿˜æ²¡å­˜è¿‡æ¡£ï¼\n\n");
 		return;
 	}
 	if(*ko!=NULL)
@@ -678,8 +675,8 @@ void readData(tt **ko)
 			for(i=0;  i < (*ko)->hangMax ; i++){
 				for(i2=0;  i2 < (*ko)->lieMax ; i2++){
 					if(  (  (*ko)->tu   )[i][i2] > 0  ){
-						printf("ÒÑ¾­ÓĞÏÖÓĞµÄ´³¹ØÊı¾İÁËÅ¶£¡\n");
-						printf("¼ÌĞø¶Áµµ»áµ¼ÖÂÏÖÓĞ´³¹ØÊı¾İµÄ¶ªÊ§Å¶£¡\n");
+						printf("å·²ç»æœ‰ç°æœ‰çš„é—¯å…³æ•°æ®äº†å“¦ï¼\n");
+						printf("ç»§ç»­è¯»æ¡£ä¼šå¯¼è‡´ç°æœ‰é—¯å…³æ•°æ®çš„ä¸¢å¤±å“¦ï¼\n");
 						if(!jinggao())
 							return;
 						break;
@@ -688,47 +685,47 @@ void readData(tt **ko)
 			}
 		}
 	}
-    char* json_content=NULL;//ÎÄ¼şÄÚÈİ
-    long len;//ÎÄ¼ş³¤¶È
-    fseek(fp,0,SEEK_END);//ÎÄ¼şÖ¸Õë·Åµ½ÎÄ¼şÄ©Î²
-    len=ftell(fp);//¶ÁÈ¡ÎÄ¼şÖ¸Õëµ±Ç°Î»ÖÃÓëÎÄ¼ş¿ªÍ·µÄÆ«ÒÆÁ¿
-    fseek(fp,0,SEEK_SET);//ÎÄ¼şÖ¸Õë·Åµ½ÎÄ¼ş¿ªÍ·
-    json_content=(char*)malloc(len+1);//¿ª±ÙÁÙÊ±»º´æ¿Õ¼ä
-    fread(json_content,1,len,fp);//¶ÁÈ¡ÎÄ¼ş
-	sendProgramInfo("½ÓÏÂÀ´³öÏÖµÄÊÇ´æµµÎÄ¼şµÄÄÚÈİ\n*²»±Ø¾ª»Å£¬ÒàÎŞĞë×öÈÎºÎ¶¯×÷");
+    char* json_content=NULL;//æ–‡ä»¶å†…å®¹
+    long len;//æ–‡ä»¶é•¿åº¦
+    fseek(fp,0,SEEK_END);//æ–‡ä»¶æŒ‡é’ˆæ”¾åˆ°æ–‡ä»¶æœ«å°¾
+    len=ftell(fp);//è¯»å–æ–‡ä»¶æŒ‡é’ˆå½“å‰ä½ç½®ä¸æ–‡ä»¶å¼€å¤´çš„åç§»é‡
+    fseek(fp,0,SEEK_SET);//æ–‡ä»¶æŒ‡é’ˆæ”¾åˆ°æ–‡ä»¶å¼€å¤´
+    json_content=(char*)malloc(len+1);//å¼€è¾Ÿä¸´æ—¶ç¼“å­˜ç©ºé—´
+    fread(json_content,1,len,fp);//è¯»å–æ–‡ä»¶
+	sendProgramInfo("æ¥ä¸‹æ¥å‡ºç°çš„æ˜¯å­˜æ¡£æ–‡ä»¶çš„å†…å®¹\n*ä¸å¿…æƒŠæ…Œï¼Œäº¦æ— é¡»åšä»»ä½•åŠ¨ä½œ");
 	cJSON *jsonData = cJSON_Parse(json_content);
 	if(jsonData)
 	{
-		printf("´æµµÎÄ¼şÒÑ¼ÓÔØµ½³ÌĞò£¡\n");
-		printf("´æµµÎÄ¼şÄÚÈİÈçÏÂ£¡\n");
+		printf("å­˜æ¡£æ–‡ä»¶å·²åŠ è½½åˆ°ç¨‹åºï¼\n");
+		printf("å­˜æ¡£æ–‡ä»¶å†…å®¹å¦‚ä¸‹ï¼\n");
 		char *buf=cJSON_Print(jsonData);
 		puts(buf);
-		//Êä³öÒ»ÏÂ³ÌĞòµ½µ×½âÎöµ½ÁËÊ²Ã´ÄÚÈİ
-		sendProgramInfo("½ÓÏÂÀ´½«Ö´ĞĞÊı¾İĞ£Ñé£¡");
+		//è¾“å‡ºä¸€ä¸‹ç¨‹åºåˆ°åº•è§£æåˆ°äº†ä»€ä¹ˆå†…å®¹
+		sendProgramInfo("æ¥ä¸‹æ¥å°†æ‰§è¡Œæ•°æ®æ ¡éªŒï¼");
 		if(buf)
 			free(buf);
 	}
 	fclose(fp);
 	if(checkJsonData(jsonData,ko))
-    	printf("\n¶Áµµ³É¹¦£¡\n\n");
+    	printf("\nè¯»æ¡£æˆåŠŸï¼\n\n");
 	else
-		printf("\n¶ÁµµÊ§°Ü£¡\n\n");
+		printf("\nè¯»æ¡£å¤±è´¥ï¼\n\n");
     system("pause");
     return;
 }
 void removeData()
 {
-	printf("\nÄú¼´½«Ö´ĞĞÉ¾µµ²Ù×÷£¡\n");
+	printf("\næ‚¨å³å°†æ‰§è¡Œåˆ æ¡£æ“ä½œï¼\n");
 	if(!jinggao())
 		return;
 	if(remove(filename)==0)
 	{
-		printf("\nÉ¾µµ³É¹¦£¡\n\n");
+		printf("\nåˆ æ¡£æˆåŠŸï¼\n\n");
 	}
 	else
 	{
-		printf("\nÉ¾µµÊ§°Ü£¡\n");
-		printf("´íÎóÔ­ÒòÈçÏÂ£º\n");
+		printf("\nåˆ æ¡£å¤±è´¥ï¼\n");
+		printf("é”™è¯¯åŸå› å¦‚ä¸‹ï¼š\n");
 		perror("remove");
 	}
 	printf("\n\n");
@@ -752,21 +749,21 @@ bool checkJsonData(cJSON *json,tt **ko)
 	nodeBuf[7]=cJSON_GetObjectItem(json,"tu");
 	for(i=0;i<8;i++){
 		if(nodeBuf[i]==NULL){
-			printf("\nÊı¾İËğ»µ»ò°æ±¾²»Æ¥Åä£¡");
+			printf("\næ•°æ®æŸåæˆ–ç‰ˆæœ¬ä¸åŒ¹é…ï¼");
 			return false;
 		}
 	}
 	if(nodeBuf[7]->type != cJSON_Array){
-		printf("\nÊı¾İtuµÄÀàĞÍ´æÔÚÒì³££¡");
+		printf("\næ•°æ®tuçš„ç±»å‹å­˜åœ¨å¼‚å¸¸ï¼");
 		return false;
 	}
 	kk.lieMax = nodeBuf[0]->valuedouble;
 	kk.hangMax = nodeBuf[1]->valuedouble;
-	//ÅĞ¶ÏÊı¾İ×ÔÉíÊÇ·ñ´æÔÚÃ¬¶Ü
+	//åˆ¤æ–­æ•°æ®è‡ªèº«æ˜¯å¦å­˜åœ¨çŸ›ç›¾
 	i3=kk.lieMax * kk.hangMax;
 	for(i=2;i<6;i++){
 		if(nodeBuf[i]->valuedouble > i3){
-			printf("\nJSONÊı¾İ×ÔÉíÓĞÎ¥±³Âß¼­£¬³¬³ö×ÔÉí·¶Î§£¡");
+			printf("\nJSONæ•°æ®è‡ªèº«æœ‰è¿èƒŒé€»è¾‘ï¼Œè¶…å‡ºè‡ªèº«èŒƒå›´ï¼");
 			return false;
 		}
 	}
@@ -778,7 +775,7 @@ bool checkJsonData(cJSON *json,tt **ko)
 	kk.Lv = nodeBuf[6]->valuedouble;
 	cJSON *tuY = cJSON_GetArrayItem(nodeBuf[7],0);
 	if(cJSON_GetArraySize(tuY) != kk.hangMax){
-		printf("\nÊı¾İtuµÄ´óĞ¡ÓĞÎó£¬JSONÊı¾İ×ÔÉíÃ¬¶Ü£¡");
+		printf("\næ•°æ®tuçš„å¤§å°æœ‰è¯¯ï¼ŒJSONæ•°æ®è‡ªèº«çŸ›ç›¾ï¼");
 		return false;
 	}
 	bool flag=false;
@@ -797,13 +794,13 @@ bool checkJsonData(cJSON *json,tt **ko)
 				switch(getPlaceName(&kk,i2,i))
 				{
 					case 'S':
-						printf("\nÊı¾İstartPlaceÓĞÎó");
+						printf("\næ•°æ®startPlaceæœ‰è¯¯");
 						break;
 					case 'E':
-						printf("\nÊı¾İendPlaceÓĞÎó");
+						printf("\næ•°æ®endPlaceæœ‰è¯¯");
 						break;
 					case 'N':
-						printf("\nÊı¾İnowPlaceÓĞÎó");
+						printf("\næ•°æ®nowPlaceæœ‰è¯¯");
 						break;
 					default:
 						flag=false;
@@ -821,7 +818,7 @@ bool checkJsonData(cJSON *json,tt **ko)
 	}
 	if(count != kk.undo)
 	{
-		printf("\nÊı¾İundo´íÎó£¬Ó¦Îª%d",count);
+		printf("\næ•°æ®undoé”™è¯¯ï¼Œåº”ä¸º%d",count);
 		return false;
 	}
 	if(ko)
@@ -844,13 +841,13 @@ bool is_replace(tt *ko,int x,int y,bool warming)
 			switch(tmpChar)
 			{
 				case 'S':
-					printf("°¡Å¶£¡Ã²ËÆºÍÆğµãÖØµşÁËÄØ£¡\nÖØĞÂÔÙÊäÈëÒ»´Î°É£¡\n");
+					printf("å•Šå“¦ï¼è²Œä¼¼å’Œèµ·ç‚¹é‡å äº†å‘¢ï¼\né‡æ–°å†è¾“å…¥ä¸€æ¬¡å§ï¼\n");
 					break;
 				case 'E':
-					printf("°¡Å¶£¡Ã²ËÆºÍÖÕµãÖØµşÁËÄØ£¡\nÖØĞÂÔÙÊäÈëÒ»´Î°É£¡\n");
+					printf("å•Šå“¦ï¼è²Œä¼¼å’Œç»ˆç‚¹é‡å äº†å‘¢ï¼\né‡æ–°å†è¾“å…¥ä¸€æ¬¡å§ï¼\n");
 					break;
 				case ' ':
-					printf("°¡Å¶£¡Ã²ËÆºÍ¿Õ¶´ÖØµşÁËÄØ£¡\nÖØĞÂÔÙÊäÈëÒ»´Î°É£¡\n");
+					printf("å•Šå“¦ï¼è²Œä¼¼å’Œç©ºæ´é‡å äº†å‘¢ï¼\né‡æ–°å†è¾“å…¥ä¸€æ¬¡å§ï¼\n");
 					break;
 			}
 		}
@@ -868,16 +865,16 @@ bool justMakeSure(void)
 			return true;
 		if(tmpchar=='n')
 			return false;
-		printf("Ö»ĞèÊäÈë×ÖÄ¸\"y\"»ò\"n\"£¬È»ºó»Ø³µ¾Í¿ÉÒÔÀ²£¡\n");
+		printf("åªéœ€è¾“å…¥å­—æ¯\"y\"æˆ–\"n\"ï¼Œç„¶åå›è½¦å°±å¯ä»¥å•¦ï¼\n");
 	}
 }
 bool jinggao(void)
 {
 	int ttt;
-	printf("\nÄúÈ·¶¨Òª¼ÌĞøÖ´ĞĞ¸Ã²Ù×÷Âğ£¿£¡\n");
-	printf("ÈçĞè¼ÌĞøÖ´ĞĞ£¬ÇëÊäÈëÊı×Ö666\n");
-	printf("ÊäÈëÆäËüÄÚÈİ½«È¡Ïûµ±Ç°²Ù×÷\n");
-	printf("ÇëÊäÈë£º");
+	printf("\næ‚¨ç¡®å®šè¦ç»§ç»­æ‰§è¡Œè¯¥æ“ä½œå—ï¼Ÿï¼\n");
+	printf("å¦‚éœ€ç»§ç»­æ‰§è¡Œï¼Œè¯·è¾“å…¥æ•°å­—666\n");
+	printf("è¾“å…¥å…¶å®ƒå†…å®¹å°†å–æ¶ˆå½“å‰æ“ä½œ\n");
+	printf("è¯·è¾“å…¥ï¼š");
 	scanf("%d",&ttt);
 	if(ttt==666)
 		return true;
